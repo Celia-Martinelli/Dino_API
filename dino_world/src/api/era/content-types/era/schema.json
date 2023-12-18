@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "eras",
+  "info": {
+    "singularName": "era",
+    "pluralName": "eras",
+    "displayName": "Era",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "dinosaurs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dinosaur.dinosaur",
+      "mappedBy": "era"
+    },
+    "beginning": {
+      "type": "string"
+    },
+    "finished": {
+      "type": "string"
+    }
+  }
+}

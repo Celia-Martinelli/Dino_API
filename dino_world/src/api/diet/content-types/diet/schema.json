@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "diets",
+  "info": {
+    "singularName": "diet",
+    "pluralName": "diets",
+    "displayName": "Food",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "dinosaurs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::dinosaur.dinosaur",
+      "mappedBy": "foods"
+    }
+  }
+}

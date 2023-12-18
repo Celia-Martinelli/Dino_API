@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "museums",
+  "info": {
+    "singularName": "museum",
+    "pluralName": "museums",
+    "displayName": "Museum",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "adress": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "biginteger"
+    },
+    "town": {
+      "type": "string"
+    },
+    "web_site": {
+      "type": "string"
+    },
+    "picture": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "dinosaurs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::dinosaur.dinosaur",
+      "mappedBy": "museums"
+    },
+    "country": {
+      "type": "string"
+    }
+  }
+}

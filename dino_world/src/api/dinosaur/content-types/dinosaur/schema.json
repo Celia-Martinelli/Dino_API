@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dinosaurs",
+  "info": {
+    "singularName": "dinosaur",
+    "pluralName": "dinosaurs",
+    "displayName": "Dinosaur",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "height": {
+      "type": "biginteger"
+    },
+    "length": {
+      "type": "biginteger"
+    },
+    "weight": {
+      "type": "biginteger"
+    },
+    "description": {
+      "type": "text"
+    },
+    "continent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::continent.continent",
+      "inversedBy": "dinosaurs"
+    },
+    "prey": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::dinosaur.dinosaur",
+      "inversedBy": "predators"
+    },
+    "predators": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::dinosaur.dinosaur",
+      "inversedBy": "prey"
+    },
+    "environment": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::environment.environment",
+      "inversedBy": "dinosaurs"
+    },
+    "era": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::era.era",
+      "inversedBy": "dinosaurs"
+    },
+    "family": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::family.family",
+      "inversedBy": "dinosaurs"
+    },
+    "walks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::walk.walk",
+      "inversedBy": "dinosaurs"
+    },
+    "museums": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::museum.museum",
+      "inversedBy": "dinosaurs"
+    },
+    "foods": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::diet.diet",
+      "inversedBy": "dinosaurs"
+    }
+  }
+}
